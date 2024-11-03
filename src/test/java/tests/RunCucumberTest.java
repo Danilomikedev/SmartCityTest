@@ -6,8 +6,8 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/features", // Caminho onde suas features estão localizadas
-        glue = "tests" // Pacote onde estão seus step definitions
+        features = "src/test/resources/features",
+        glue = "tests"
 )
 public class RunCucumberTest {
 }
