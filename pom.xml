@@ -7,6 +7,11 @@
     <artifactId>SmartCityTestAutomation</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source> <!-- Defina a versão do Java -->
+        <maven.compiler.target>11</maven.compiler.target> <!-- Defina a versão do Java -->
+    </properties>
+
     <dependencies>
         <!-- Dependência do Cucumber para escrita dos testes BDD -->
         <dependency>
@@ -43,7 +48,6 @@
             <scope>test</scope>
         </dependency>
 
-
         <!-- Dependência do JUnit para asserções -->
         <dependency>
             <groupId>junit</groupId>
@@ -64,6 +68,17 @@
                     <includes>
                         <include>**/RunCucumberTest.java</include>
                     </includes>
+                </configuration>
+            </plugin>
+
+            <!-- Plugin do compilador do Maven -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version> <!-- Use a versão mais recente do plugin -->
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
                 </configuration>
             </plugin>
         </plugins>
